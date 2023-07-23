@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Calculator</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: noraml;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #CBCE91FF, #EA738DFF);
+      }
+
+      .calculator-grid {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        grid-template-columns: repeat(4, 100px);
+        grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+      }
+
+      .calculator-grid>button {
+        cursor: pointer;
+        font-size: 2rem;
+        border: 1px, solid #FFFFFF;
+        outline: none;
+        background-color: rgba(250, 300, 250, 0.55);
+      }
+
+      .calculator-grid>button:hover {
+        background-color: #a9a9a9;
+
+      }
+
+      .span-two {
+        grid-column: span 2;
+        color: #adf802;
+        background-color: rgba(red, green, blue, alpha);
+      }
+
+      .output .previous-operand {
+        color: white;
+        font-size: 205rem;
+      }
+
+      .output {
+        grid-column: 1/ -1;
+        background-color: rgba(red, green, blue, alpha);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 10px;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+
+      .output .current-operand {
+        color: white;
+        font-size: 2.5rem;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+    <div class="calculator-grid">
+      <div class="output">
+        <div data-previous-operand class="previous-operand"></div>
+        <div data-current-operand class="current-operand"></div>
+
+      </div>
+      <button class="span-two">AC</button>
+      <button data-delete>DEL</button>
+      <button data-operation>/</button>
+
+
+      <button data-number>1</button>
+      <button data-number>2</button>
+      <button data-number>3</button>
+
+      <button data-operation>*</button>
+      <button data-number>4</button>
+      <button data-number>5</button>
+      <button data-number>6</button>
+      <button data-operation>+</button>
+      <button data-number>7</button>
+      <button data-number>8</button>
+      <button data-number>9</button>
+      <button data-operation>-</button>
+      <button data-number>.</button>
+
+      <button data-number>0</button>
+
+
+
+      <button data-operation>%</button>
+
+      <button data-equals>=</button>
+
+    </div>
+  </head>
+
+  <body>
+
+  </body>
+
+</html>

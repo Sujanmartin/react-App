@@ -1,30 +1,38 @@
+import React from "react"
+import { Route, Routes } from "react-router"
+import HomePages from "./pages/HomePages"
+import About2 from "./pages/About2"
 
-import React from "react";
-import HomePage from "./pages/HomePage";
-import Header from "./components/Header";
-import Footerpage from "./pages/Footerpage";
-import { Route, Routes } from "react-router";
-import About from "./pages/About";
-
-
+import About from "./pages/About"
+import RootLayout from "./pages/RootLayout"
+import ContactPage from "./pages/ContactPage"
+import NotFound from "./pages/NotFound"
+import Detail from "./pages/Detail"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
-  const mino = 'hello';
   return (
     <>
 
-      <Header />
-
-      <h1>{mino}</h1>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="about" element={<About />} />
+        <Route path="/" element={<RootLayout />}>
+          <Route index element={<HomePages />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="Detail/:idMeal" element={<Detail />} />
+
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<ContactPage />} />
+
+
+        </Route>
 
 
 
-
-      </Routes>
+      </Routes >
+      <ToastContainer position="top-right" autoClose='1000' />
 
     </>
+
   )
 }
 export default App
